@@ -1,0 +1,77 @@
+
+
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8666
+
+
+spring:
+  # 环境 dev|test|prod
+  profiles:
+    active: dev-mysql
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  datasource:
+    #MySQL
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 962464
+    url: jdbc:mysql://localhost:3306/spring_security?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+  session:
+    store-type=redis: redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      min-idle: 10000
+    timeout: 30000
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.*.entity
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: ID_WORKER
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      field-strategy: NOT_NULL
+      #驼峰下划线转换
+      column-underline: true
+      #db-type: mysql
+      # 是否开启 LIKE 查询
+      column-like: false
+      # 是否开启大写命名,默认false
+      capital-mode: false
+    banner: false
+  #mybatis 原生配置
+  configuration:
+    # 日志输出类
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 否开启自动驼峰命名规则
+    map-underscore-to-camel-case: false
+    # 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存，默认为 true
+    cache-enabled: false
+    # 指定当结果集中值为 null 的时候是否调用映射对象的 Setter（Map 对象时为 put）方法
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+
+#下划线转驼峰
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
