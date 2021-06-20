@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50721
+ Source Server Version : 50734
  Source Host           : localhost:3306
  Source Schema         : spring_security
 
  Target Server Type    : MySQL
- Target Server Version : 50721
+ Target Server Version : 50734
  File Encoding         : 65001
 
- Date: 22/11/2020 18:13:36
+ Date: 20/06/2021 18:16:07
 */
 
 SET NAMES utf8mb4;
@@ -127,13 +127,13 @@ CREATE TABLE `sys_user`  (
   `account` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '账号',
   `user_name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
   `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户密码',
-  `last_login_time` datetime(0) NULL DEFAULT NULL COMMENT '上一次登录时间',
+  `last_login_time` datetime NULL DEFAULT NULL COMMENT '上一次登录时间',
   `enabled` tinyint(1) NULL DEFAULT 1 COMMENT '账号是否可用。默认为1（可用）',
   `account_not_expired` tinyint(1) NULL DEFAULT 1 COMMENT '是否过期。默认为1（没有过期）',
   `account_not_locked` tinyint(1) NULL DEFAULT 1 COMMENT '账号是否锁定。默认为1（没有锁定）',
   `credentials_not_expired` tinyint(1) NULL DEFAULT 1 COMMENT '证书（密码）是否过期。默认为1（没有过期）',
-  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
+  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
   `create_user` int(11) NULL DEFAULT NULL COMMENT '创建人',
   `update_user` int(11) NULL DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`id`) USING BTREE
@@ -142,8 +142,8 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 'admin', '管理员', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2020-11-22 14:42:00', 1, 1, 1, 1, '2019-08-29 06:28:36', '2020-11-22 14:42:00', 1, 1);
-INSERT INTO `sys_user` VALUES (2, 'user', '用户', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2020-11-22 17:45:35', 1, 1, 1, 1, '2019-08-29 06:29:24', '2020-11-22 17:45:35', 1, 2);
+INSERT INTO `sys_user` VALUES (1, 'admin', '管理员', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2021-04-23 13:14:43', 1, 1, 1, 1, '2019-08-29 06:28:36', '2021-04-23 13:14:43', 1, 1);
+INSERT INTO `sys_user` VALUES (2, 'user', '用户', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2021-06-20 17:51:54', 1, 1, 1, 1, '2019-08-29 06:29:24', '2021-06-20 17:51:54', 1, 2);
 
 -- ----------------------------
 -- Table structure for sys_user_role_relation
