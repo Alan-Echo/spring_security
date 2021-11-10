@@ -11,7 +11,7 @@
  Target Server Version : 50734
  File Encoding         : 65001
 
- Date: 20/06/2021 18:16:07
+ Date: 23/04/2021 22:28:41
 */
 
 SET NAMES utf8mb4;
@@ -143,7 +143,7 @@ CREATE TABLE `sys_user`  (
 -- Records of sys_user
 -- ----------------------------
 INSERT INTO `sys_user` VALUES (1, 'admin', '管理员', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2021-04-23 13:14:43', 1, 1, 1, 1, '2019-08-29 06:28:36', '2021-04-23 13:14:43', 1, 1);
-INSERT INTO `sys_user` VALUES (2, 'user', '用户', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2021-06-20 17:51:54', 1, 1, 1, 1, '2019-08-29 06:29:24', '2021-06-20 17:51:54', 1, 2);
+INSERT INTO `sys_user` VALUES (2, 'user', '用户', '$2a$10$y4O8z2ZXs5fSkV/SGSwyAuXlXp716ZelkNS01hJlqHuXviX2kUdd2', '2021-04-23 12:56:19', 1, 1, 1, 1, '2019-08-29 06:29:24', '2021-04-23 12:56:19', 1, 2);
 
 -- ----------------------------
 -- Table structure for sys_user_role_relation
